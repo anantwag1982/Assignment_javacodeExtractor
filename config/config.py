@@ -4,7 +4,7 @@ import os
 @dataclass
 class LLMConfig:
     model_name: str = "command-r-plus"
-    api_key: str = os.getenv("COHERE_API_KEY", "QPc13bRgD2BzrsnnLR0Z7TRYUXHEN9EDK5dGA7dE")
+    api_key: str = os.getenv("COHERE_API_KEY", "QPc13bRgD2Bzrs*********************")
     temperature: float = 0.7
     max_tokens: int = 2048
     max_retries: int = 3
