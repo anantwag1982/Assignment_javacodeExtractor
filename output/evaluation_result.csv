@@ -1,0 +1,50 @@
+user_input,retrieved_contexts,response,reference,answer_correctness,context_precision,context_recall,faithfulness
+Method: CustomerController.getCustomers,"['Method: getCustomers | Signature: public String getCustomers(ModelMap modelMap,\n                               @RequestParam(value = ""firstName"", defaultValue = ""ALL CUSTOMERS"")']",,,0.24999999999999983,0.9999999999,,0.0
+Method: CustomerController.CustomerController,"['Method: CustomerController | Signature: public CustomerController(CustomerService customerService, RentalService rentalService, InventoryService inventoryService, FilmService filmService)']",,,0.24999999999999983,0.9999999999,,0.0
+Method: CustomerController.if,"['Method: if | Signature: else if (firstNameFilter.equals(""ALL CUSTOMERS"")']",,,0.24999999999999983,0.0,,0.0
+Method: CustomerController.currentUser,"['Method: currentUser | Signature: public String currentUser(ModelMap modelMap, HttpServletRequest request)']",,,0.24999999999999983,0.9999999999,,0.0
+Method: CustomerController.Order,"['Method: Order | Signature: new Order(customer, film, rental)']",,,0.24999999999999983,0.9999999999,,0.0
+Method: CustomerController.showUsersRentalHistory,"['Method: showUsersRentalHistory | Signature: public String showUsersRentalHistory(ModelMap modelMap,\n                                         @PathVariable(name = ""id"")']",,,0.24999999999999983,0.9999999999,,0.0
+Class overview: SakilaProjectApplication,['Class: SakilaProjectApplication | File: cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/SakilaProjectApplication.java'],Entry point for a Spring Boot application.,,0.05558002177219541,0.0,,1.0
+Method: SakilaProjectApplication.main,['Method: main | Signature: void main(String[] args)'],The main method to start the Spring Boot application.,,0.040079408024326316,0.9999999999,,1.0
+Method: Category.getCategoryId,['Method: getCategoryId | Signature: public int getCategoryId()'],,,0.6249999999999998,0.9999999999,,1.0
+Method: Category.getLastUpdate,['Method: getLastUpdate | Signature: public Timestamp getLastUpdate()'],,,0.9999999999999998,0.9999999999,,1.0
+Method: Category.setCategoryId,['Method: setCategoryId | Signature: public void setCategoryId(int categoryId)'],,,0.24999999999999983,0.9999999999,,0.0
+Method: Category.setLastUpdate,['Method: setLastUpdate | Signature: public void setLastUpdate(Timestamp lastUpdate)'],,,0.24999999999999983,0.9999999999,,0.0
+Method: Category.equals,['Method: equals | Signature: public boolean equals(Object o)'],,,0.24999999999999983,0.9999999999,,0.0
+Method: Category.setName,['Method: setName | Signature: public void setName(String name)'],,,0.9999999999999998,0.9999999999,,0.0
+Method: Category.getName,['Method: getName | Signature: public String getName()'],,,0.24999999999999983,0.9999999999,,1.0
+Method: Category.hashCode,['Method: hashCode | Signature: public int hashCode()'],,,0.2499952216027044,0.9999999999,,0.0
+Method: MainController.home,['Method: home | Signature: public String home()'],,,,0.9999999999,,0.0
+Method: MainController.login,['Method: login | Signature: public String login()'],,,,0.9999999999,,0.0
+Method: MainController.account,['Method: account | Signature: public String account()'],,,,0.9999999999,,0.0
+Method: Actor.getLastUpdate,['Method: getLastUpdate | Signature: public Timestamp getLastUpdate()'],,,,0.9999999999,,1.0
+Method: Actor.getFirstName,['Method: getFirstName | Signature: public String getFirstName()'],,,0.9999999999999998,0.0,,1.0
+Method: Actor.getLastName,['Method: getLastName | Signature: public String getLastName()'],,,,0.0,1.0,0.0
+Method: Actor.setLastUpdate,['Method: setLastUpdate | Signature: public void setLastUpdate(Timestamp lastUpdate)'],,,,0.9999999999,,1.0
+Method: Actor.hashCode,['Method: hashCode | Signature: public int hashCode()'],,,,0.9999999999,,1.0
+Method: Actor.setLastName,['Method: setLastName | Signature: public void setLastName(String lastName)'],,,0.9999999999999998,0.9999999999,,0.0
+Method: Actor.getActorId,['Method: getActorId | Signature: public int getActorId()'],,,,0.9999999999,,1.0
+Method: Actor.equals,['Method: equals | Signature: public boolean equals(Object o)'],,,0.9999999999999998,0.9999999999,,
+Method: Actor.setFirstName,['Method: setFirstName | Signature: public void setFirstName(String firstName)'],,,,0.9999999999,,1.0
+Method: Actor.setActorId,['Method: setActorId | Signature: public void setActorId(int actorId)'],,,,0.9999999999,,0.0
+Method: FilmController.showEditProductPage,"['Method: showEditProductPage | Signature: public ModelAndView showEditProductPage(@PathVariable(name = ""id"")']",,,,0.9999999999,,0.0
+Method: FilmController.getFilmDetails,"['Method: getFilmDetails | Signature: public String getFilmDetails(ModelMap modelMap,\n                                 @RequestParam(value = ""title"", defaultValue = ""ALL FILMS"")']",,,,0.9999999999,,0.0
+Method: FilmController.getFilms,"['Method: getFilms | Signature: public String getFilms(ModelMap modelMap, @RequestParam(value = ""title"", defaultValue = ""ALL FILMS"")']",,,,0.9999999999,,0.0
+Method: FilmController.FilmController,"['Method: FilmController | Signature: public FilmController(FilmService filmService, InventoryService inventoryService, RentalService rentalService, CustomerService customerService)']",,,,0.9999999999,,0.0
+Method: FilmController.findFilmByID,['Method: findFilmByID | Signature: public Film findFilmByID(Integer id)'],,,,0.9999999999,,1.0
+Method: FilmController.ModelAndView,"['Method: ModelAndView | Signature: new ModelAndView(""/owner/edit-film"")']",,,,0.9999999999,,1.0
+Method: FilmController.deleteProduct,"['Method: deleteProduct | Signature: public String deleteProduct(@PathVariable(name = ""id"")']",,,0.24999999999999983,0.9999999999,,0.0
+Method: FilmController.rentFilm,"['Method: rentFilm | Signature: public String rentFilm(ModelMap modelMap, Principal principal,\n                           @PathVariable(""filmid"")']",,,0.24999758477557366,0.9999999999,,0.0
+Method: StaffController.currentUser,"['Method: currentUser | Signature: public String currentUser(ModelMap modelMap, HttpServletRequest request)']",,,0.2499898720526677,0.9999999999,,0.0
+Method: StaffController.StaffController,"['Method: StaffController | Signature: public StaffController(StaffService staffService, CustomerService customerService, InventoryService inventoryService)']",,,0.24999999999999983,0.0,,0.0
+Class overview: MavenWrapperDownloader,['Class: MavenWrapperDownloader | File: cloned_repo/SakilaProject/SakilaProject-master/.mvn/wrapper/MavenWrapperDownloader.java'],Downloader for Maven wrapper JAR file.,,,0.9999999999,,1.0
+Method: MavenWrapperDownloader.URL,['Method: URL | Signature: new URL(urlString)'],,,,0.9999999999,,1.0
+Method: MavenWrapperDownloader.getPasswordAuthentication,['Method: getPasswordAuthentication | Signature: protected PasswordAuthentication getPasswordAuthentication()'],,,0.24999999999999983,0.0,,1.0
+Method: MavenWrapperDownloader.main,['Method: main | Signature: void main(String args[])'],Entry point of the program. Initializes and starts the downloader.,,0.04457716195035532,0.9999999999,,
+Method: MavenWrapperDownloader.downloadFileFromURL,"['Method: downloadFileFromURL | Signature: void downloadFileFromURL(String urlString, File destination)']",Downloads a file from a given URL to a specified destination file.,,0.0473204151866633,0.9999999999,,1.0
+Method: MavenWrapperDownloader.FileInputStream,['Method: FileInputStream | Signature: new FileInputStream(mavenWrapperPropertyFile)'],,,0.24999999999999983,0.9999999999,,0.0
+Method: MavenWrapperDownloader.Properties,['Method: Properties | Signature: new Properties()'],,,0.999993566439261,0.0,,1.0
+Method: MavenWrapperDownloader.PasswordAuthentication,"['Method: PasswordAuthentication | Signature: new PasswordAuthentication(username, password)']",,,0.24999999999999983,0.9999999999,,1.0
+Method: MavenWrapperDownloader.FileOutputStream,['Method: FileOutputStream | Signature: new FileOutputStream(destination)'],,,0.24999999999999983,0.9999999999,,0.0
+Method: MavenWrapperDownloader.File,['Method: File | Signature: new File(baseDirectory.getAbsolutePath()'],,,0.9999913831466268,0.0,,1.0

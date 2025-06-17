@@ -103,6 +103,17 @@ class CodebaseAnalyzer:
         # Write output
         await self.output_writer.write_output(output)
         self.logger.info("Analysis complete. Output saved")
+        if eval_config.enable_evaluation:
+            self.logger.info("Triggering RAGAS evaluation")
+            try:
+                # Fire-and-forget approach
+                subprocess.Popen([
+                    sys.executable, 
+                    "evaluation_main.py"
+                ])
+                self.logger.info("Evaluation process started in background")
+            except Exception as ex:
+                self.logger.error(f"Failed to start evaluation: {str(ex)}")
 
 async def main():
     analyzer = CodebaseAnalyzer()

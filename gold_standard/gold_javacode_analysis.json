@@ -1,0 +1,508 @@
+{
+  "project": "SakilaProject",
+  "analysis_date": "2025-06-17T15:50:02.732870",
+  "project_overview": {
+    "project_name": "SakilaProject",
+    "purpose": "To create a Web App front end for the Sakila database, providing film rental business data.",
+    "core_functionality": "Allow users to browse and search for films and actors.",
+    "key_technologies": [
+      "Java",
+      "Spring Boot",
+      "Maven",
+      "MySQL"
+    ],
+    "architecture": "Web application with a Java Spring Boot backend connected to MySQL.",
+    "business_domain": "Film rental"
+  },
+  "components": [
+    {
+      "class_name": "MavenWrapperDownloader",
+      "overview": "",
+      "methods": [
+        {
+          "name": "main",
+          "signature": "void main(String args[])",
+          "description": ""
+        },
+        {
+          "name": "File",
+          "signature": "new File(args[0])",
+          "description": ""
+        },
+        {
+          "name": "File",
+          "signature": "new File(baseDirectory, MAVEN_WRAPPER_PROPERTIES_PATH)",
+          "description": ""
+        },
+        {
+          "name": "FileInputStream",
+          "signature": "new FileInputStream(mavenWrapperPropertyFile)",
+          "description": ""
+        },
+        {
+          "name": "Properties",
+          "signature": "new Properties()",
+          "description": ""
+        },
+        {
+          "name": "File",
+          "signature": "new File(baseDirectory.getAbsolutePath()",
+          "description": ""
+        },
+        {
+          "name": "downloadFileFromURL",
+          "signature": "void downloadFileFromURL(String urlString, File destination)",
+          "description": ""
+        },
+        {
+          "name": "getPasswordAuthentication",
+          "signature": "protected PasswordAuthentication getPasswordAuthentication()",
+          "description": ""
+        },
+        {
+          "name": "PasswordAuthentication",
+          "signature": "new PasswordAuthentication(username, password)",
+          "description": ""
+        },
+        {
+          "name": "URL",
+          "signature": "new URL(urlString)",
+          "description": ""
+        },
+        {
+          "name": "FileOutputStream",
+          "signature": "new FileOutputStream(destination)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "java.util.Properties"
+      ],
+      "complexity": "high",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/.mvn/wrapper/MavenWrapperDownloader.java"
+    },
+    {
+      "class_name": "SakilaProjectApplication",
+      "overview": "",
+      "methods": [
+        {
+          "name": "main",
+          "signature": "void main(String[] args)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.springframework.boot.SpringApplication",
+        "org.springframework.boot.autoconfigure.SpringBootApplication"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/SakilaProjectApplication.java"
+    },
+    {
+      "class_name": "ActorController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "ActorController",
+          "signature": "public ActorController(FilmService filmService, ActorService actorService)",
+          "description": ""
+        },
+        {
+          "name": "getActors",
+          "signature": "public String getActors(ModelMap modelMap,\n                            @RequestParam(value = \"firstName\", defaultValue = \"ALL ACTORS\")",
+          "description": ""
+        },
+        {
+          "name": "if",
+          "signature": "else if (lastNameFilter.equals(\"ALL ACTORS\")",
+          "description": ""
+        },
+        {
+          "name": "if",
+          "signature": "else if (firstNameFilter.equals(\"ALL ACTORS\")",
+          "description": ""
+        },
+        {
+          "name": "getActorFilmDetails",
+          "signature": "public String getActorFilmDetails(ModelMap modelMap,\n                                      @RequestParam(value = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "findActorById",
+          "signature": "public Actor findActorById(Integer id)",
+          "description": ""
+        },
+        {
+          "name": "getActorFullNameFromID",
+          "signature": "public String getActorFullNameFromID(Integer id)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.springframework.web.bind.annotation.RequestParam",
+        "org.springframework.beans.factory.annotation.Autowired",
+        "org.springframework.stereotype.Controller",
+        "com.sparta.engineering72.sakilaproject.entities.Actor",
+        "java.util.List",
+        "com.sparta.engineering72.sakilaproject.services.ActorService",
+        "org.springframework.ui.ModelMap",
+        "org.springframework.web.bind.annotation.GetMapping",
+        "com.sparta.engineering72.sakilaproject.services.FilmService"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/ActorController.java"
+    },
+    {
+      "class_name": "CategoryController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "CategoryController",
+          "signature": "public CategoryController(FilmService filmService, CategoryService categoryService)",
+          "description": ""
+        },
+        {
+          "name": "getCategories",
+          "signature": "public String getCategories(ModelMap modelMap)",
+          "description": ""
+        },
+        {
+          "name": "getCategoryDetails",
+          "signature": "public String getCategoryDetails(ModelMap modelMap,\n                                 @RequestParam(value = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "getCategoryById",
+          "signature": "public Category getCategoryById(Integer id)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.springframework.web.bind.annotation.RequestParam",
+        "com.sparta.engineering72.sakilaproject.entities.Category",
+        "org.springframework.beans.factory.annotation.Autowired",
+        "org.springframework.stereotype.Controller",
+        "org.springframework.ui.ModelMap",
+        "org.springframework.web.bind.annotation.GetMapping"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/CategoryController.java"
+    },
+    {
+      "class_name": "CustomerController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "CustomerController",
+          "signature": "public CustomerController(CustomerService customerService, RentalService rentalService, InventoryService inventoryService, FilmService filmService)",
+          "description": ""
+        },
+        {
+          "name": "currentUser",
+          "signature": "public String currentUser(ModelMap modelMap, HttpServletRequest request)",
+          "description": ""
+        },
+        {
+          "name": "Order",
+          "signature": "new Order(customer, film, rental)",
+          "description": ""
+        },
+        {
+          "name": "getCustomers",
+          "signature": "public String getCustomers(ModelMap modelMap,\n                               @RequestParam(value = \"firstName\", defaultValue = \"ALL CUSTOMERS\")",
+          "description": ""
+        },
+        {
+          "name": "if",
+          "signature": "else if (lastNameFilter.equals(\"ALL CUSTOMERS\")",
+          "description": ""
+        },
+        {
+          "name": "if",
+          "signature": "else if (firstNameFilter.equals(\"ALL CUSTOMERS\")",
+          "description": ""
+        },
+        {
+          "name": "showUsersRentalHistory",
+          "signature": "public String showUsersRentalHistory(ModelMap modelMap,\n                                         @PathVariable(name = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "Order",
+          "signature": "new Order(customer, film, rental)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "java.time.Instant",
+        "org.springframework.beans.factory.annotation.Autowired",
+        "java.sql.Timestamp",
+        "org.springframework.stereotype.Controller",
+        "com.sparta.engineering72.sakilaproject.entities.Customer",
+        "java.util.ArrayList",
+        "java.time.LocalDate",
+        "com.sparta.engineering72.sakilaproject.services.CustomerService",
+        "com.sparta.engineering72.sakilaproject.services.RentalService",
+        "org.springframework.ui.Model",
+        "com.sparta.engineering72.sakilaproject.entities.Film",
+        "java.util.List",
+        "javax.servlet.http.HttpServletRequest",
+        "org.springframework.ui.ModelMap",
+        "com.sparta.engineering72.sakilaproject.services.InventoryService",
+        "com.sparta.engineering72.sakilaproject.services.FilmService"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/CustomerController.java"
+    },
+    {
+      "class_name": "FilmController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "FilmController",
+          "signature": "public FilmController(FilmService filmService, InventoryService inventoryService, RentalService rentalService, CustomerService customerService)",
+          "description": ""
+        },
+        {
+          "name": "getFilms",
+          "signature": "public String getFilms(ModelMap modelMap, @RequestParam(value = \"title\", defaultValue = \"ALL FILMS\")",
+          "description": ""
+        },
+        {
+          "name": "getFilmDetails",
+          "signature": "public String getFilmDetails(ModelMap modelMap, @RequestParam(value = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "rentFilm",
+          "signature": "public String rentFilm(ModelMap modelMap, Principal principal,\n                           @PathVariable(\"filmid\")",
+          "description": ""
+        },
+        {
+          "name": "getFilmDetails",
+          "signature": "public String getFilmDetails(ModelMap modelMap,\n                                 @RequestParam(value = \"title\", defaultValue = \"ALL FILMS\")",
+          "description": ""
+        },
+        {
+          "name": "showEditProductPage",
+          "signature": "public ModelAndView showEditProductPage(@PathVariable(name = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "ModelAndView",
+          "signature": "new ModelAndView(\"/owner/edit-film\")",
+          "description": ""
+        },
+        {
+          "name": "deleteProduct",
+          "signature": "public String deleteProduct(@PathVariable(name = \"id\")",
+          "description": ""
+        },
+        {
+          "name": "findFilmByID",
+          "signature": "public Film findFilmByID(Integer id)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "java.sql.Timestamp",
+        "java.time.LocalDateTime",
+        "com.sparta.engineering72.sakilaproject.entities.Customer",
+        "java.time.LocalDate",
+        "org.springframework.web.servlet.ModelAndView",
+        "com.sparta.engineering72.sakilaproject.entities.Film",
+        "org.springframework.stereotype.Controller",
+        "com.sparta.engineering72.sakilaproject.services.CustomerService",
+        "com.sparta.engineering72.sakilaproject.services.RentalService",
+        "javax.persistence.criteria.CriteriaBuilder",
+        "com.sparta.engineering72.sakilaproject.entities.Rental",
+        "com.sparta.engineering72.sakilaproject.services.InventoryService",
+        "com.sparta.engineering72.sakilaproject.services.FilmService",
+        "java.util.HashMap",
+        "org.springframework.transaction.annotation.Transactional",
+        "java.security.Principal",
+        "org.springframework.beans.factory.annotation.Autowired",
+        "java.util.ArrayList",
+        "org.springframework.ui.Model",
+        "java.util.List",
+        "org.springframework.ui.ModelMap",
+        "com.sparta.engineering72.sakilaproject.entities.Inventory",
+        "java.time.Instant"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/FilmController.java"
+    },
+    {
+      "class_name": "MainController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "home",
+          "signature": "public String home()",
+          "description": ""
+        },
+        {
+          "name": "login",
+          "signature": "public String login()",
+          "description": ""
+        },
+        {
+          "name": "account",
+          "signature": "public String account()",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.springframework.stereotype.Controller",
+        "org.springframework.web.bind.annotation.RequestMapping"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/MainController.java"
+    },
+    {
+      "class_name": "StaffController",
+      "overview": "",
+      "methods": [
+        {
+          "name": "StaffController",
+          "signature": "public StaffController(StaffService staffService, CustomerService customerService, InventoryService inventoryService)",
+          "description": ""
+        },
+        {
+          "name": "currentUser",
+          "signature": "public String currentUser(ModelMap modelMap, HttpServletRequest request)",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.springframework.beans.factory.annotation.Autowired",
+        "com.sparta.engineering72.sakilaproject.services.StaffService",
+        "org.springframework.stereotype.Controller",
+        "com.sparta.engineering72.sakilaproject.services.CustomerService",
+        "javax.servlet.http.HttpServletRequest",
+        "org.springframework.ui.ModelMap",
+        "org.springframework.web.bind.annotation.GetMapping",
+        "com.sparta.engineering72.sakilaproject.entities.Staff",
+        "com.sparta.engineering72.sakilaproject.services.InventoryService"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/controller/StaffController.java"
+    },
+    {
+      "class_name": "Actor",
+      "overview": "",
+      "methods": [
+        {
+          "name": "getActorId",
+          "signature": "public int getActorId()",
+          "description": ""
+        },
+        {
+          "name": "setActorId",
+          "signature": "public void setActorId(int actorId)",
+          "description": ""
+        },
+        {
+          "name": "getFirstName",
+          "signature": "public String getFirstName()",
+          "description": ""
+        },
+        {
+          "name": "setFirstName",
+          "signature": "public void setFirstName(String firstName)",
+          "description": ""
+        },
+        {
+          "name": "getLastName",
+          "signature": "public String getLastName()",
+          "description": ""
+        },
+        {
+          "name": "setLastName",
+          "signature": "public void setLastName(String lastName)",
+          "description": ""
+        },
+        {
+          "name": "getLastUpdate",
+          "signature": "public Timestamp getLastUpdate()",
+          "description": ""
+        },
+        {
+          "name": "setLastUpdate",
+          "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+          "description": ""
+        },
+        {
+          "name": "equals",
+          "signature": "public boolean equals(Object o)",
+          "description": ""
+        },
+        {
+          "name": "hashCode",
+          "signature": "public int hashCode()",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "java.util.Objects",
+        "java.util.Collection",
+        "java.sql.Timestamp"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/entities/Actor.java"
+    },
+    {
+      "class_name": "Category",
+      "overview": "",
+      "methods": [
+        {
+          "name": "getCategoryId",
+          "signature": "public int getCategoryId()",
+          "description": ""
+        },
+        {
+          "name": "setCategoryId",
+          "signature": "public void setCategoryId(int categoryId)",
+          "description": ""
+        },
+        {
+          "name": "getName",
+          "signature": "public String getName()",
+          "description": ""
+        },
+        {
+          "name": "setName",
+          "signature": "public void setName(String name)",
+          "description": ""
+        },
+        {
+          "name": "getLastUpdate",
+          "signature": "public Timestamp getLastUpdate()",
+          "description": ""
+        },
+        {
+          "name": "setLastUpdate",
+          "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+          "description": ""
+        },
+        {
+          "name": "equals",
+          "signature": "public boolean equals(Object o)",
+          "description": ""
+        },
+        {
+          "name": "hashCode",
+          "signature": "public int hashCode()",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "java.util.Objects",
+        "java.util.Collection",
+        "java.sql.Timestamp"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/SakilaProject-master/src/main/java/com/sparta/engineering72/sakilaproject/entities/Category.java"
+    }
+  ]
+}
