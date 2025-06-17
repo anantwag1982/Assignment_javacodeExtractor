@@ -2,7 +2,7 @@ Java Codebase Analyzer with LLM Integration   **
 
 Overview
 
-The Java Codebase Analyzer is a sophisticated tool that leverages Large Language Models (LLMs) to analyze Java codebases, extract structured information, and generate comprehensive documentation. The system clones repositories, processes Java files, and uses Cohere's LLM to extract key architectural information about classes, methods, and project structure.
+The Java Codebase Analyzer is a sophisticated tool that leverages Large Language Models (LLMs) to analyze Java codebases, extract structured information, and generate comprehensive JSON File . The system clones repositories, processes Java files, and uses Cohere's LLM to extract key architectural information about classes, methods, and project structure.
 
 
 Architecture Overview
