@@ -7,7 +7,7 @@ The Java Codebase Analyzer is a sophisticated tool that leverages Large Language
 
 Architecture Overview
 
-<img width="602" alt="Screenshot 2025-06-18 at 2 00 56 AM" src="https://github.com/user-attachments/assets/9ba6f0f2-d31e-4891-91f8-58ade93b0228" />
+<img width="763" alt="Screenshot 2025-06-18 at 2 23 13 AM" src="https://github.com/user-attachments/assets/f6ac4d12-6da9-4fc9-95f9-018fc190e704" />
 
 
 
