@@ -1,0 +1,510 @@
+{
+  "project": "SakilaProject",
+  "analysis_date": "2025-06-17T18:56:07.723107",
+  "project_overview": {
+    "project_name": "SakilaProject",
+    "purpose": "To create a Web App front end for the Sakila database, providing film rental business data to three levels of users: Visitors, Customers, and Staff.",
+    "core_functionality": "Allow users to browse and search for films and actors, with additional features for customers and staff.",
+    "key_technologies": [
+      "Java",
+      "Spring Boot",
+      "Maven",
+      "MySQL",
+      "Agile",
+      "Scrum"
+    ],
+    "architecture": "Web application with a front end built using Java, Spring Boot, and Maven, connected to a MySQL database.",
+    "business_domain": "Film rental"
+  },
+  "components": [
+    {
+      "class_name": "MavenWrapperDownloader",
+      "overview": "Downloader for Maven wrapper JAR file.",
+      "methods": [
+        {
+          "name": "main",
+          "signature": "public static void main(String[] args)",
+          "description": "Entry point of the program. Initializes and starts the downloader."
+        },
+        {
+          "name": "downloadFileFromURL",
+          "signature": "private static void downloadFileFromURL(String urlString, File destination) throws Exception",
+          "description": "Downloads a file from a given URL to a specified destination file."
+        }
+      ],
+      "dependencies": [
+        "java.io.File",
+        "java.io.FileInputStream",
+        "java.util.Properties",
+        "java.net.Authenticator",
+        "java.lang.System",
+        "java.io.IOException",
+        "java.lang.Exception"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/.mvn/wrapper/MavenWrapperDownloader.java"
+    },
+    {
+      "class_name": "MockTests",
+      "overview": "Test suite for various controllers and services",
+      "methods": [
+        {
+          "name": "init",
+          "signature": "public void init()",
+          "description": "Initializes Mockito annotations before tests"
+        },
+        {
+          "name": "testActorById",
+          "signature": "public void testActorById()",
+          "description": "Tests retrieving an actor by ID and asserts the actor's first name and ID."
+        },
+        {
+          "name": "testActorByFirstName",
+          "signature": "public void testActorByFirstName()",
+          "description": "Tests retrieving an actor by first name and asserts the actor's first name and ID."
+        },
+        {
+          "name": "testActorByLastName",
+          "signature": "public void testActorByLastName()",
+          "description": "Tests retrieving an actor by last name and asserts the actor's last name and ID."
+        },
+        {
+          "name": "testActorByMore",
+          "signature": "public void testActorByMore()",
+          "description": "Tests retrieving an actor by first and last name, asserting both along with the actor's ID."
+        },
+        {
+          "name": "testActorByFullName",
+          "signature": "public void testActorByFullName()",
+          "description": "Tests retrieving an actor by full name and asserts the last update timestamp."
+        },
+        {
+          "name": "testFilmByID",
+          "signature": "",
+          "description": ""
+        }
+      ],
+      "dependencies": [
+        "org.junit.Before",
+        "org.mockito.MockitoAnnotations",
+        "org.junit.Test",
+        "org.mockito.Mock",
+        "java.sql.Timestamp",
+        "org.mockito.InjectMocks",
+        "org.mockito.Spy",
+        "org.mockito.Mockito",
+        "org.junit.Assert"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/src/test/java/com/sparta/engineering72/sakilaproject/MockTests.java"
+    },
+    {
+      "class_name": "SakilaProjectApplicationTests",
+      "overview": "Unit tests for the MainController class.",
+      "methods": [
+        {
+          "name": "MainController1",
+          "signature": "public void MainController1()",
+          "description": "Tests the home() method of the MainController class."
+        },
+        {
+          "name": "MainController2",
+          "signature": "public void MainController2()",
+          "description": "Tests the account() method of the MainController class."
+        },
+        {
+          "name": "MainController3",
+          "signature": "public void MainController3()",
+          "description": "Tests the login() method of the MainController class."
+        }
+      ],
+      "dependencies": [
+        "org.junit.Test",
+        "org.junit.Assert.assertEquals",
+        "MainController"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/src/test/java/com/sparta/engineering72/sakilaproject/SakilaProjectApplicationTests.java"
+    },
+    {
+      "class_name": "SakilaProjectApplication",
+      "overview": "Entry point for a Spring Boot application.",
+      "methods": [
+        {
+          "name": "main",
+          "signature": "public static void main(String[] args)",
+          "description": "The main method to start the Spring Boot application."
+        }
+      ],
+      "dependencies": [
+        "org.springframework.boot.SpringApplication",
+        "org.springframework.boot.autoconfigure.SpringBootApplication"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/SakilaProjectApplication.java"
+    },
+    {
+      "class_name": "WebSecurityConfig",
+      "overview": "Configures security for web requests, defining access rules and authentication mechanisms.",
+      "methods": [
+        {
+          "name": "configure",
+          "signature": "protected void configure(HttpSecurity http) throws Exception",
+          "description": "Configures the given HttpSecurity builder with authentication and authorization rules. Sets access restrictions for URLs, defines login and logout behavior, and specifies success handlers."
+        },
+        {
+          "name": "userDetailsService",
+          "signature": "@Bean\npublic UserDetailsService userDetailsService()",
+          "description": "Defines a bean that provides user details for authentication."
+        },
+        {
+          "name": "passwordEncoder",
+          "signature": "@Bean\npublic PasswordEncoder passwordEncoder()",
+          "description": "Defines a bean that encodes passwords using the BCrypt algorithm."
+        },
+        {
+          "name": "authenticationProvider",
+          "signature": "@Bean\npublic DaoAuthenticationProvider authenticationProvider()",
+          "description": "Creates a bean for the authentication provider, configuring it with the user details service and password encoder."
+        },
+        {
+          "name": "configure",
+          "signature": "protected void configure(AuthenticationManagerBuilder auth) throws Exception",
+          "description": "Configures the authentication manager builder, adding the custom authentication provider."
+        }
+      ],
+      "dependencies": [
+        "org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter",
+        "org.springframework.beans.factory.annotation.Autowired",
+        "org.springframework.stereotype.Component",
+        "org.springframework.context.annotation.Bean",
+        "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+        "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder",
+        "org.springframework.security.authentication.dao.DaoAuthenticationProvider",
+        "org.springframework.security.core.userdetails.UserDetailsService",
+        "org.springframework.security.core.userdetails.UserDetailsServiceImpl",
+        "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+        "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+        "org.springframework.security.config.annotation.web.builders.WebSecurity",
+        "org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter",
+        "org.springframework.security.web.authentication.logout.LogoutFilter",
+        "org.springframework.security.web.savedrequest.RequestCache",
+        "org.springframework.security.web.authentication.www.BasicAuthenticationFilter",
+        "org.springframework.security.web.access.channel.ChannelProcessingFilter",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter",
+        "org.springframework.security.web.header.HeaderWriterFilter",
+        "org.springframework.security.web.csrf.CsrfFilter",
+        "org.springframework.security.web.authentication.logout.LogoutHandler",
+        "org.springframework.security.web.authentication.logout.LogoutSuccessHandler",
+        "org.springframework.security.web.authentication.RememberMeServices",
+        "org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter",
+        "org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter",
+        "org.springframework.security.web.access.ExceptionTranslationFilter",
+        "org.springframework.security.web.access.intercept.FilterSecurityInterceptor",
+        "org.springframework.security.web.FirewallExceptionReporter",
+        "org.springframework.security.web.authentication.AnonymousAuthenticationFilter",
+        "org.springframework.security.web.session.SessionManagementFilter",
+        "org.springframework.security.web.authentication.SessionFixationProtectionFilter",
+        "org.springframework.security.web.authentication.www.DigestAuthenticationFilter",
+        "org.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter",
+        "org.springframework.security.saml.SAMLProcessingFilter",
+        "org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter",
+        "org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationDetailsSource",
+        "org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider",
+        "org.springframework.security.web.authentication.preauth.PreAuthAuthenticationProcessingFilter",
+        "org.springframework.security.web.authentication.preauth.j2ee.J2eePreAuthenticatedProcessingFilter",
+        "org.springframework.security.web.authentication.preauth.x509.X509AuthenticationToken",
+        "org.springframework.security.web.PortResolver",
+        "org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint",
+        "org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint",
+        "org.springframework.security.web.authentication.www.NonceExpiredException",
+        "org.springframework.security.web.authentication.www.InvalidNonceException",
+        "org.springframework.security.web.authentication.www.MissingDigestParameterException",
+        "org.springframework.security.web.authentication.www.ResponseNonceExpiredException",
+        "org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken",
+        "org.springframework.security.core.userdetails.UserDetails",
+        "org.springframework.security.core.Authentication",
+        "org.springframework.security.core.context.SecurityContextHolder",
+        "org.springframework.security.core.context.SecurityContext",
+        "org.springframework.security.core.context.SecurityContextImpl",
+        "org.springframework.security.core.AuthenticationException",
+        "org.springframework.security.access.AccessDeniedException",
+        "org.springframework.security.web.WebAttributes",
+        "org.springframework.security.web.savedrequest.SavedRequest",
+        "org.springframework.security.core.context.SecurityContextHolderStrategy",
+        "org.springframework.security.core.context.SecurityContextHolderStrategies",
+        "org.springframework.security.core.context.HttpSessionSecurityContextRepository",
+        "org.springframework.security.core.context.SecurityContextRepository",
+        "org.springframework.security.core.context.SecurityContextPersistenceFilter",
+        "org.springframework.security.web.PortResolverImpl",
+        "org.springframework.security.web.header.writers.HstsHeaderWriter",
+        "org.springframework.security.web.header.writers.StaticHeadersWriter",
+        "org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter",
+        "org.springframework.security.web.header.writers.XXssProtectionHeaderWriter",
+        "org.springframework.security.web.header.writers.XContentTypeOptionsHeaderWriter",
+        "org.springframework.security.web.header.writers.XFrameOptionsHeaderWriter",
+        "org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter",
+        "org.springframework.security.web.header.writers.FeaturePolicyHeaderWriter",
+        "org.springframework.security.web.header.writers.CrossOriginResourcePolicyHeaderWriter",
+        "org.springframework.security.web.header.writers.CacheControlHeadersWriter",
+        "org.springframework.security.web.header.writers.StaticHeadersWriter.StaticHeadersWriterBuilder",
+        "org.springframework.security.web.header.writers.StaticHeadersWriter.StaticHeadersWriterBuilder.StaticHeadersWriterBuilderInternal",
+        "org.springframework.security.web.header.writers.StaticHeadersWriter.StaticHeadersWriterBuilderInternal.StaticHeadersWriterContext",
+        "org.springframework.security.web.header.writers.StaticHeadersWriter.StaticHeadersWriterContext",
+        "org.springframework.security.web.csrf.CsrfToken",
+        "org.springframework.security.web.csrf.CsrfTokenRepository",
+        "org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository",
+        "org.springframework.security.web.csrf.CsrfFilter",
+        "org.springframework.security.web.csrf.CsrfTokenRepository.SaveContext",
+        "org.springframework.security.web.csrf.CsrfTokenRepository.GenerateTokenContext",
+        "org.springframework.security.web.csrf.MissingCsrfTokenException",
+        "org.springframework.security.web.csrf.CsrfException",
+        "org.springframework.security.web.csrf.InvalidCsrfTokenException",
+        "org.springframework.security.web.csrf.CsrfTokenNotFoundException",
+        "org.springframework.security.web.firewall.FirewalledResponse",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponse",
+        "org.springframework.security.web.firewall.FirewalledRequest",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest",
+        "org.springframework.security.web.firewall.FirewalledRequest.Builder",
+        "org.springframework.security.web.util.matcher.RequestMatcher",
+        "org.springframework.security.web.util.matcher.AntPathRequestMatcher",
+        "org.springframework.security.web.util.matcher.AnyRequestMatcher",
+        "org.springframework.security.web.util.matcher.OrRequestMatcher",
+        "org.springframework.security.web.util.matcher.AndRequestMatcher",
+        "org.springframework.security.web.util.matcher.RegexRequestMatcher",
+        "org.springframework.security.web.util.matcher.RequestMatcherEditor",
+        "org.springframework.security.web.util.matcher.NegatedRequestMatcher",
+        "org.springframework.security.web.util.matcher.RequestHeaderRequestMatcher",
+        "org.springframework.security.web.util.OnCommittedResponseWrapper",
+        "org.springframework.security.web.util.matcher.RequestMatcherResolver",
+        "org.springframework.security.web.util.matcher.RequestMatcherResolverChain",
+        "org.springframework.security.web.util.matcher.RequestMatcherResolverChain.RequestMatcherResolverChainBuilder",
+        "org.springframework.security.web.util.matcher.RequestMatcherResolverChainBuilder",
+        "org.springframework.security.web.util.matcher.RequestMatcherEntry",
+        "org.springframework.security.web.util.matcher.RequestMatcherEntryEditor",
+        "org.springframework.security.web.util.matcher.RequestMatcherEntry.RequestMatcherEntryBuilder",
+        "org.springframework.security.web.util.OnCommittedResponseWrapperImpl",
+        "org.springframework.security.web.FilterChainProxy",
+        "org.springframework.security.web.SecurityFilterChain",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChain",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManager",
+        "org.springframework.security.web.FilterChainProxy.AntPathRequestMatcherEntry",
+        "org.springframework.security.web.FilterChainProxy.AntPathRequestMatcherEntryEditor",
+        "org.springframework.security.web.FilterChainProxy.AntPathRequestMatcherEntry.AntPathRequestMatcherEntryBuilder",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter.SecurityContextRepositoryResponseWrapper",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.ProxyCallback",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.ProxyCallbackImpl",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter.SecurityContextRepositoryResponseWrapper.SecurityContextRepositoryResponseWrapperImpl",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManager.VirtualFilterChainManagerBuilder",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistration",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditor",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditor.FilterRegistrationEditorBuilder",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditorBuilder",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditorBuilder.FilterRegistrationEditorBuilderImpl",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditorBuilderImpl",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditorBuilderImpl.FilterRegistrationEditorBuilderImplBuilder",
+        "org.springframework.security.web.FilterChainProxy.VirtualFilterChainManagerBuilder.FilterRegistrationEditorBuilderImplBuilder",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.ProxyCallbackImpl",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper.WrappedRequest",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapper",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter.ResponseWrapper",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter.ResponseWrapperImpl",
+        "org.springframework.security.web.context.SecurityContextPersistenceFilter.ResponseWrapperImpl.WrappedResponse",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper.WrappedResponse",
+        "org.springframework.security.web.firewall.FirewalledResponse.FirewalledResponseWrapper",
+        "org.springframework.security.web.firewall.FirewalledResponse.FirewalledResponseWrapperImpl",
+        "org.springframework.security.web.firewall.FirewalledResponse.FirewalledResponseWrapperImpl.WrappedResponse",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponse.DefaultFirewalledResponseWrapper",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponse.DefaultFirewalledResponseWrapperImpl",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponse.DefaultFirewalledResponseWrapperImpl.WrappedResponse",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest.DefaultFirewalledRequestWrapper",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest.DefaultFirewalledRequestWrapperImpl",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest.DefaultFirewalledRequestWrapperImpl.WrappedRequest",
+        "org.springframework.security.web.firewall.FirewalledRequest.FirewalledRequestWrapper",
+        "org.springframework.security.web.firewall.FirewalledRequest.FirewalledRequestWrapperImpl",
+        "org.springframework.security.web.firewall.FirewalledRequest.FirewalledRequestWrapperImpl.WrappedRequest",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest.DefaultFirewalledRequestWrapper.DefaultFirewalledRequestWrapperImpl",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest.DefaultFirewalledRequestWrapper.DefaultFirewalledRequestWrapperImpl.WrappedRequest",
+        "org.springframework.security.web.firewall.FirewalledResponse.FirewalledResponseWrapper",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequest",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponse",
+        "org.springframework.security.web.firewall.FirewalledRequest",
+        "org.springframework.security.web.firewall.FirewalledResponse",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequestWrapper",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponseWrapper",
+        "org.springframework.security.web.firewall.FirewalledRequestWrapper",
+        "org.springframework.security.web.firewall.FirewalledResponseWrapper",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequestWrapperImpl",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponseWrapperImpl",
+        "org.springframework.security.web.firewall.DefaultFirewalledRequestWrapperImpl.WrappedRequest",
+        "org.springframework.security.web.firewall.DefaultFirewalledResponseWrapperImpl.WrappedResponse",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.ProxyCallbackImpl.SavedRequestAwareWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper.SavedRequestAwareWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper.SavedRequestAwareWrapper.WrappedRequest",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapper.SavedRequestAwareWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapper.SavedRequestAwareWrapper.WrappedResponse",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapperImpl",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapperImpl.WrappedResponse",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapperImpl.SavedRequestAwareWrapper",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionSecurityContextRepositoryResponseWrapperImpl.SavedRequestAwareWrapper.WrappedResponse",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper.SavedRequestAwareWrapper.WrappedResponse",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.SavedRequestAwareWrapper",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.SavedRequestAwareWrapper.WrappedRequest",
+        "org.springframework.security.web.FilterChainProxy.SecurityContextHolderAwareRequestFilter.SecurityContextHolderAwareOncePerRequestFilter.SavedRequestAwareWrapper.WrappedResponse",
+        "org.springframework.security.web.context.HttpSessionSecurityContextRepository.HttpSessionRequestReactionWrapper",
+        "org.springframework.security.web.context.Http"
+      ],
+      "complexity": "unknown",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/securingweb/WebSecurityConfig.java"
+    },
+    {
+      "class_name": "SuccessHandler",
+      "overview": "Handles successful authentication and redirects based on user role.",
+      "methods": [
+        {
+          "name": "onAuthenticationSuccess",
+          "signature": "public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException",
+          "description": "Overrides the method to perform redirection based on user roles after successful authentication."
+        }
+      ],
+      "dependencies": [
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "org.springframework.security.core.Authentication",
+        "org.springframework.security.core.GrantedAuthority",
+        "org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler",
+        "org.springframework.security.web.util.UrlUtils",
+        "org.springframework.security.web.RedirectStrategy",
+        "org.springframework.security.web.DefaultRedirectStrategy",
+        "java.io.IOException",
+        "javax.servlet.ServletException"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/securingweb/SuccessHandler.java"
+    },
+    {
+      "class_name": "MvcConfig",
+      "overview": "Configures the view controllers for a web application.",
+      "methods": [
+        {
+          "name": "addViewControllers",
+          "signature": "public void addViewControllers(ViewControllerRegistry registry)",
+          "description": "Registers view controllers and sets their corresponding view names."
+        }
+      ],
+      "dependencies": [
+        "org.springframework.web.servlet.config.annotation.WebMvcConfigurer",
+        "org.springframework.web.servlet.config.annotation.ViewControllerRegistry"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/securingweb/MvcConfig.java"
+    },
+    {
+      "class_name": "UserDetailsServiceImpl",
+      "overview": "Implements UserDetailsService to load user details by username, using repositories for customer and staff data.",
+      "methods": [
+        {
+          "name": "loadUserByUsername",
+          "signature": "public UserDetails loadUserByUsername(String anyUsername) throws UsernameNotFoundException",
+          "description": "Loads user details by username, returning a User object with appropriate roles and encoded password. Throws UsernameNotFoundException if the user is not found."
+        }
+      ],
+      "dependencies": [
+        "org.springframework.beans.factory.annotation.Autowired",
+        "org.springframework.stereotype.Service",
+        "org.springframework.security.core.userdetails.User",
+        "org.springframework.security.core.userdetails.User.UserBuilder",
+        "org.springframework.security.core.userdetails.UsernameNotFoundException",
+        "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder",
+        "com.example.repository.CustomerRepository",
+        "com.example.repository.StaffRepository",
+        "com.example.model.Customer",
+        "com.example.model.Staff",
+        "java.lang.String",
+        "java.lang.StringBuilder",
+        "java.lang.NullPointerException"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/securingweb/UserDetailsServiceImpl.java"
+    },
+    {
+      "class_name": "FailureHandler",
+      "overview": "Implements AccessDeniedHandler to handle access denied exceptions",
+      "methods": [
+        {
+          "name": "handle",
+          "signature": "public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException",
+          "description": "Handles access denied exceptions by redirecting to an error page."
+        }
+      ],
+      "dependencies": [
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.ServletException",
+        "javax.servlet.http.AccessDeniedException",
+        "java.io.IOException"
+      ],
+      "complexity": "low",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/securingweb/FailureHandler.java"
+    },
+    {
+      "class_name": "CustomerRepository",
+      "overview": "Interface extending JpaRepository to provide data access operations for Customer entities.",
+      "methods": [
+        {
+          "name": "getCustomerByCredentials",
+          "signature": "Customer getCustomerByCredentials(@Param(\"username\") String username, @Param(\"password\") Integer password);",
+          "description": "Retrieves a customer based on their email (username) and customer ID (password) using a native SQL query."
+        },
+        {
+          "name": "getCustomerByUsername",
+          "signature": "Customer getCustomerByUsername(@Param(\"username\") String username);",
+          "description": "Fetches a customer by their email (username) using a native SQL query."
+        },
+        {
+          "name": "getCustomersByFirstName",
+          "signature": "List<Customer> getCustomersByFirstName(@Param(\"firstName\") String firstName);",
+          "description": "Returns a list of customers with the specified first name using a native SQL query."
+        },
+        {
+          "name": "getCustomersByLastName",
+          "signature": "List<Customer> getCustomersByLastName(@Param(\"lastName\") String lastName);",
+          "description": "Returns a list of customers with the specified last name using a native SQL query."
+        },
+        {
+          "name": "getCustomersByFullName",
+          "signature": "List<Customer> getCustomersByFullName(@Param(\"firstName\") String firstName, @Param(\"lastName\") String lastName);",
+          "description": "Retrieves a list of customers with the specified full name (combination of first name and last name) using a native SQL query."
+        },
+        {
+          "name": "getCustomerByCustomerId",
+          "signature": "Customer getCustomerByCustomerId(Integer id);",
+          "description": "Fetches a customer by their unique customer ID."
+        },
+        {
+          "name": "getCustomerByEmail",
+          "signature": "Customer getCustomerByEmail(String email);",
+          "description": "Retrieves a customer by their email address."
+        },
+        {
+          "name": "getCustomerCount",
+          "signature": "Integer getCustomerCount();",
+          "description": "Returns the total count of customers in the database using a native SQL query."
+        }
+      ],
+      "dependencies": [
+        "org.springframework.data.jpa.repository.JpaRepository",
+        "org.springframework.data.repository.query.Param",
+        "org.springframework.stereotype.Repository",
+        "org.springframework.data.jpa.repository.Query"
+      ],
+      "complexity": "medium",
+      "source_file": "cloned_repo/SakilaProject/src/main/java/com/sparta/engineering72/sakilaproject/respositories/CustomerRepository.java"
+    }
+  ]
+}
